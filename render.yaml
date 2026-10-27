@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: pcos-prediction
+    runtime: python
+    plan: free
+    buildCommand: pip install -r pcos_prediction/requirements.txt
+    startCommand: gunicorn --chdir pcos_prediction wsgi:app
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: SECRET_KEY
+        generateValue: true
