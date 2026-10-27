@@ -202,8 +202,8 @@
 </head>
 <body>
     <div class="nav-buttons">
-        <a href="user-history.html" class="btn btn-outline-primary">View History</a>
-        <a href="login.html" class="btn btn-outline-secondary">Logout</a>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-primary">View History</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary">Logout</a>
     </div>
 
     <div class="container py-5">
@@ -380,6 +380,7 @@
     <script>
         // Initialize tooltips
         document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('currentUser', {{ username|tojson }});
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 return new bootstrap.Tooltip(tooltipTriggerEl);
@@ -555,7 +556,7 @@ document.getElementById('recommendationBtn')?.addEventListener('click', function
     localStorage.setItem('pcosRiskLevel', riskLevel);
     
     // Redirect to recommendations page
-    window.location.href = 'http://127.0.0.1:5500/pcos_prediction/templates/recommend.html';
+    window.location.href = "{{ url_for('recommendations') }}";
 });
         
         function generateRecommendations(riskLevel) {

@@ -192,10 +192,10 @@
                         </div>
                         
                         <div class="text-center mt-4">
-                            <a href="pcos-assessment.html" class="btn btn-primary me-2">
+                            <a href="{{ url_for('predict') }}" class="btn btn-primary me-2">
                                 <i class="fas fa-redo me-1"></i> Retake Assessment
                             </a>
-                            <a href="user-history.html" class="btn btn-outline-primary me-2">
+                            <a href="{{ url_for('dashboard') }}" class="btn btn-outline-primary me-2">
                                 <i class="fas fa-history me-1"></i> View History
                             </a>
                             <button id="downloadPdf" class="btn btn-success">
@@ -226,7 +226,7 @@
             
             if (!latestAssessment) {
                 // If no assessment found, redirect to assessment page
-                window.location.href = 'pcos-assessment.html';
+                window.location.href = "{{ url_for('predict') }}";
                 return;
             }
             

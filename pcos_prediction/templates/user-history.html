@@ -88,8 +88,8 @@
 <body>
     <div class="container">
         <div class="nav-buttons">
-            <a href="http://127.0.0.1:5500/pcos_prediction/templates/index.html" class="btn btn-primary">New Assessment</a>
-            <a href="login.html" class="btn btn-outline-danger">Logout</a>
+            <a href="{{ url_for('predict') }}" class="btn btn-primary">New Assessment</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">Logout</a>
         </div>
         
         <div class="user-header">

@@ -336,7 +336,7 @@
                         <a class="nav-link active" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="http://127.0.0.1:5500/pcos_prediction/templates/blog.html">Blog</a>
+                        <a class="nav-link active" href="{{ url_for('blog') }}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#features">Features</a>
@@ -348,10 +348,10 @@
                         <a class="nav-link" href="#resources">Resources</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:5500/pcos_prediction/templates/login.html">Login</a>
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
                     </li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                        <a class="nav-link btn btn-primary text-white px-3" href="http://127.0.0.1:5500/pcos_prediction/templates/register.html">
+                        <a class="nav-link btn btn-primary text-white px-3" href="{{ url_for('register') }}">
                             <i class="fas fa-user-plus me-1"></i>Register
                         </a>
                     </li>
@@ -368,10 +368,10 @@
                     <h1 class="display-4 fw-bold mb-4">Comprehensive PCOS Management & Risk Assessment</h1>
                     <p class="lead mb-5">Track symptoms, assess risks, and get personalized health recommendations for Polycystic Ovary Syndrome.</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="http://127.0.0.1:5500/pcos_prediction/templates/index.html" class="btn btn-primary btn-lg px-4 me-2 animate__animated animate__pulse animate__infinite">
+                        <a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg px-4 me-2 animate__animated animate__pulse animate__infinite">
                             <i class="fas fa-play me-2"></i>Start Assessment
                         </a>
-                        <a href="http://127.0.0.1:5500/pcos_prediction/templates/learn_more.html" class="btn btn-outline-light btn-lg px-4">
+                        <a href="{{ url_for('learn_more') }}" class="btn btn-outline-light btn-lg px-4">
                             <i class="fas fa-info-circle me-2"></i>Learn More
                         </a>
                     </div>
@@ -431,7 +431,7 @@
                             </div>
                             <div>
                                 <h3>
-                                    <a href="http://127.0.0.1:5500/pcos_prediction/templates/index.html"  style="text-decoration: none; color: inherit;">AI-Powered Risk Assessment</a>
+                                    <a href="{{ url_for('predict') }}" style="text-decoration: none; color: inherit;">AI-Powered Risk Assessment</a>
                                 </h3>
                                 <p>Our advanced algorithm evaluates multiple factors to provide your personalized PCOS risk score.</p>
                                 <ul class="list-unstyled">
@@ -454,7 +454,7 @@
                             </div>
                             <div>
     <h3>
-        <a href="http://127.0.0.1:5500/pcos_prediction/templates/symptoms.html" style="text-decoration: none; color: inherit;">
+        <a href="{{ url_for('symptoms') }}" style="text-decoration: none; color: inherit;">
             Comprehensive Symptom Tracker
         </a>
     </h3>
@@ -542,7 +542,7 @@
                         <div class="feature-icon">
                             <i class="fas fa-user-md"></i>
                         </div>
-                        <h3><a href="http://127.0.0.1:5500/pcos_prediction/templates/recommend.html" style="text-decoration: none; color: inherit;">Personalized Care Plan</a></h3>
+                        <h3><a href="{{ url_for('recommendations') }}" style="text-decoration: none; color: inherit;">Personalized Care Plan</a></h3>
                         <p>Tailored recommendations based on your unique profile.</p>
                         <div class="mb-3">
                             <span class="feature-badge me-2">Diet</span>
@@ -623,7 +623,7 @@
                             </div>
                         </div>
                         
-                        <a href="http://127.0.0.1:5500/pcos_prediction/templates/symptoms.html" class="btn btn-primary mt-2">
+                        <a href="{{ url_for('symptoms') }}" class="btn btn-primary mt-2">
                             <i class="fas fa-plus-circle me-2"></i>Start Tracking Now
                         </a>
                     </div>
@@ -751,7 +751,7 @@
                         <h2 class="fw-bold mb-4">Take the First Step Towards Better Health</h2>
                         <p class="lead mb-5">Join thousands of women who have gained control over their PCOS symptoms with our comprehensive platform.</p>
                         <div class="d-flex flex-wrap justify-content-center gap-3">
-                            <a href="http://127.0.0.1:5500/pcos_prediction/templates/register.html" class="btn btn-light btn-lg px-5 py-3">
+                            <a href="{{ url_for('register') }}" class="btn btn-light btn-lg px-5 py-3">
                                 <i class="fas fa-user-plus me-2"></i>Start Your Journey
                             </a>
                             <a href="#features" class="btn btn-outline-light btn-lg px-5 py-3">

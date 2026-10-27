@@ -60,6 +60,22 @@ def home():
 def landing():
     return render_template('landing.html')
 
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
+@app.route('/learn-more')
+def learn_more():
+    return render_template('learn_more.html')
+
+@app.route('/symptoms')
+def symptoms():
+    return render_template('symptoms.html')
+
+@app.route('/recommendations')
+def recommendations():
+    return render_template('recommend.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if 'username' in session:
@@ -77,7 +93,7 @@ def login():
             session['username'] = username
             session['user_id'] = user['id']
             flash('Login successful!', 'success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('predict'))
         else:
             flash('Invalid username or password', 'danger')
     
@@ -143,24 +159,15 @@ def predict():
         flash('Assessment completed successfully!', 'success')
         return redirect(url_for('dashboard'))
     
-    return render_template('predict.html', username=session['username'])
+    return render_template('index.html', username=session['username'])
 
 @app.route('/dashboard')
+@app.route('/history')
 def dashboard():
     if 'username' not in session:
         flash('Please login to access this page', 'danger')
         return redirect(url_for('login'))
-    
-    conn = get_db_connection()
-    predictions = conn.execute(
-        'SELECT * FROM predictions WHERE user_id = ? ORDER BY prediction_date DESC',
-        (session['user_id'],)
-    ).fetchall()
-    conn.close()
-    
-    return render_template('dashboard.html', 
-                         username=session['username'],
-                         predictions=predictions)
+    return render_template('user-history.html', username=session['username'])
 
 @app.route('/logout')
 def logout():
